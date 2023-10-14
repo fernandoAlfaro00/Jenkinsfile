@@ -7,6 +7,12 @@ pipeline {
                 sh 'mvn --version'
             }
         }
+
+         stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
     }
 }
 
