@@ -14,7 +14,9 @@ pipeline {
             deleteDir() /* clean up our workspace */
         }
         success {
-            echo 'I succeeded!'
+            mail to: 'fernando.llovel.alfaro@gmail.com',
+             subject: "Pass Pipeline: ${currentBuild.fullDisplayName}",
+             body: "Value ${env.BUILD_URL}"
         }
         unstable {
             echo 'I am unstable :/'
